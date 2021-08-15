@@ -18,5 +18,5 @@ Resources:
 Outputs:
   S3Bucket:
     Description: Test CFT to create a bucket.
-    Value: !GetAtt mytestbucke.Arn
+    Value: !GetAtt mytestbucket.Arn
     Value: !Ref mytestbucket
