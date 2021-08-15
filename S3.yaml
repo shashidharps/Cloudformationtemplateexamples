@@ -1,0 +1,22 @@
+Resources:
+  mytestbucket:
+    Type: 'AWS::S3::Bucket'
+    DeletionPolicy: Retain
+    Properties:
+      AccessControl: Private
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      VersioningConfiguration:
+        Status: Enabled
+Outputs:
+  S3Bucket:
+    Description: Test CFT to create a bucket.
+    Value: !GetAtt mytestbucker.Arn
+    Value: !Ref mytestbucket
